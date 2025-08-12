@@ -1,33 +1,26 @@
-// ...............
-
-import 'package:flutter/material.dart';
-import 'pages/login_page.dart';
-import 'pages/account_page.dart';
-import 'pages/cart_page.dart';
-import 'pages/home_page.dart';
-import 'pages/list_chat.dart';
-import 'pages/detail_chat.dart';
+import 'package:flutter/material.dart'; // Mengimpor paket Material Design dari Flutter.
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: 'LoginPage',
-      routes: {
-        'LoginPage': (context) => const LoginPage(),
-        'AccountPage': (context) => const AccountPage(),
-        'CartPage': (context) => const CartPage(),
-        'HomePage': (context) => const Homepage(),
-        "ListChat": (context) => ChatListPage(),
-        "ChatDetail": (context) => ChatScreen(contactName: 'Nike Official'),
-      },
-    );
-  }
+  // Setiap program Dart dimulai dari fungsi
+  main();
+  runApp(
+    MaterialApp(
+      // MaterialApp adalah widget dasar untuk aplikasi yang mengikuti pedoman Material Design.
+      home: Scaffold(
+        // Scaffold menyediakan struktur visual dasar untuk aplikasi (misalnya AppBar, body).
+        appBar: AppBar(
+          // AppBar adalah bilah di bagian atas layar.
+          title: Text('Hello Flutter!'),
+        ),
+        body: Center(
+          // Center widget menempatkan anakannya di tengah-tengah.
+          child: Text(
+            'Hello, World from Flutter!', // Teks yang akan ditampilkan.
+            style:
+                TextStyle(fontSize: 24), // Gaya teks 14 dengan ukuran font 24.
+          ),
+        ),
+      ),
+    ),
+  );
 }
