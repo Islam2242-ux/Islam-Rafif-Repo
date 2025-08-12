@@ -1,4 +1,5 @@
 import 'pages/chapter-1.dart';
+import 'pages/chapter-2.dart';
 import 'pages/chapter-3.dart';
 import 'package:flutter/material.dart'; // Mengimpor paket Material Design dari Flutter.
 
@@ -39,7 +40,7 @@ class _MainNavbarState extends State<MainNavbar> {
 
   static final List<Widget> _pages = [
     Chapter1Page(),
-    Center(child: Text('Chapter 2', style: TextStyle(fontSize: 24))),
+    Chapter2Page(),
     Chapter3Page(),
     Center(child: Text('Chapter 4', style: TextStyle(fontSize: 24))),
     Center(child: Text('Chapter 5', style: TextStyle(fontSize: 24))),
