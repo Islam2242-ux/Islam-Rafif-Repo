@@ -1,4 +1,4 @@
-// File: lib/pages/login_page.dart
+//file: lib/pages/chapter-1.dart
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatelessWidget {

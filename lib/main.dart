@@ -1,26 +1,75 @@
 import 'package:flutter/material.dart'; // Mengimpor paket Material Design dari Flutter.
 
 void main() {
-  // Setiap program Dart dimulai dari fungsi
-  main();
-  runApp(
-    MaterialApp(
-      // MaterialApp adalah widget dasar untuk aplikasi yang mengikuti pedoman Material Design.
-      home: Scaffold(
-        // Scaffold menyediakan struktur visual dasar untuk aplikasi (misalnya AppBar, body).
-        appBar: AppBar(
-          // AppBar adalah bilah di bagian atas layar.
-          title: Text('Hello Flutter!'),
-        ),
-        body: Center(
-          // Center widget menempatkan anakannya di tengah-tengah.
-          child: Text(
-            'Hello, World from Flutter!', // Teks yang akan ditampilkan.
-            style:
-                TextStyle(fontSize: 24), // Gaya teks 14 dengan ukuran font 24.
-          ),
-        ),
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const MainNavbar(),
+    );
+  }
+}
+
+class MainNavbar extends StatefulWidget {
+  const MainNavbar({super.key});
+
+  @override
+  State<MainNavbar> createState() => _MainNavbarState();
+}
+
+class _MainNavbarState extends State<MainNavbar> {
+  int _selectedIndex = 0;
+
+  static const List<String> _titles = [
+    'Chapter 1',
+    'Chapter 2',
+    'Chapter 3',
+    'Chapter 4',
+    'Chapter 5',
+    'Chapter 6',
+  ];
+
+  static final List<Widget> _pages = [
+    Center(child: Text('Chapter 1', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Chapter 2', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Chapter 3', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Chapter 4', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Chapter 5', style: TextStyle(fontSize: 24))),
+    Center(child: Text('Chapter 6', style: TextStyle(fontSize: 24))),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_titles[_selectedIndex]),
       ),
-    ),
-  );
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.looks_one), label: 'Ch.1'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_two), label: 'Ch.2'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_3), label: 'Ch.3'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_4), label: 'Ch.4'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_5), label: 'Ch.5'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_6), label: 'Ch.6'),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
+    );
+  }
 }
