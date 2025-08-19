@@ -3,6 +3,7 @@ import 'pages/chapter-2.dart';
 import 'pages/chapter-3.dart';
 import 'pages/chapter-4.dart';
 import 'pages/chapter-6.dart';
+import 'pages/chapter-7.dart';
 import 'package:flutter/material.dart'; // Mengimpor paket Material Design dari Flutter.
 
 void main() {
@@ -38,6 +39,8 @@ class _MainNavbarState extends State<MainNavbar> {
     'Chapter 4',
     'Chapter 5',
     'Chapter 6',
+    'Chapter 7',
+    'Chapter 8',
   ];
 
   static final List<Widget> _pages = [
@@ -47,6 +50,8 @@ class _MainNavbarState extends State<MainNavbar> {
     Chapter4Page(),
     Center(child: Text('Chapter 5', style: TextStyle(fontSize: 24))),
     Chapter6Page(),
+    Chapter7Page(),
+    Center(child: Text('Chapter 8', style: TextStyle(fontSize: 24))),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -70,6 +75,8 @@ class _MainNavbarState extends State<MainNavbar> {
           BottomNavigationBarItem(icon: Icon(Icons.looks_4), label: 'Ch.4'),
           BottomNavigationBarItem(icon: Icon(Icons.looks_5), label: 'Ch.5'),
           BottomNavigationBarItem(icon: Icon(Icons.looks_6), label: 'Ch.6'),
+          BottomNavigationBarItem(icon: Icon(Icons.filter_7), label: 'Ch.7'),
+          BottomNavigationBarItem(icon: Icon(Icons.filter_8), label: 'Ch.8'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

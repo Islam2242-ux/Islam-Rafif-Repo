@@ -17,7 +17,7 @@ class Chapter6Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Gallery App'),
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.lightBlueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

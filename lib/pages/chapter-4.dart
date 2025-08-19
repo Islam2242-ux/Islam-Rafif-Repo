@@ -54,7 +54,7 @@ class _Chapter4PageState extends State<Chapter4Page> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Kalkulator Sederhana'),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.lightBlueAccent, // Ganti warna sesuai keinginan
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),

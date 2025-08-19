@@ -8,7 +8,7 @@ class Chapter2Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Biodata Saya'),
-        backgroundColor: Colors.teal, // Ganti warna sesuai keinginan
+        backgroundColor: Colors.lightBlueAccent, // Ganti warna sesuai keinginan
       ),
       body: const Center(
         child: Column(

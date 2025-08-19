@@ -9,7 +9,7 @@ class Chapter1Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Selamat Datang di Dunia Flutter!'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.lightBlueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

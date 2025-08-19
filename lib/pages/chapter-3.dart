@@ -8,7 +8,7 @@ class Chapter3Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Persiapan Flutter Development Environment'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.lightBlueAccent,
       ),
       body: Center(
         child: Card(
